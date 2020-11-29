@@ -1,0 +1,22 @@
+<template>
+  
+    <img 
+    if:true={tompic}
+    
+    src="https://www.tomandjerrychaseasia.com/m/zt/20200522142810/img/characters/pic/tom_be2af94.png"
+    alt=Tom
+    style="float:left"
+    width="150" height="150"
+     />
+     <img 
+     if:false={tompic}
+     
+     src="https://purepng.com/public/uploads/large/purepng.com-jerry-tom-and-jerrytom-and-jerrytomjerryanimated-seriesin-1940characters-1701528659592kaxzs.png"
+     alt=Jerry
+     style="float:left"
+     width="250" height="150"
+      />
+      <div  class="slds-float_right">
+         <lightning-button variant="brand" label={Brand} onclick={handleClick}  ></lightning-button>
+      </div>
+</template>

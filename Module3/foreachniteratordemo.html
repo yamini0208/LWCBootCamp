@@ -1,0 +1,51 @@
+<template>
+    <lightning-card  variant="Narrow"  title="For:Each Demo" icon-name="standard:account">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Index">Index</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Id">Id</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="First Name">Name</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Last Name">Mail</div>
+            </th>
+            </tr>
+            </thead>
+            <tbody>
+                <template if:true={contacts.length} for:each={contacts} for:item='con' for:index='index'>
+                    <tr key={con.Id}>
+                        <th scope="col">
+                            <div>{index}</div>
+                        </th>
+                        <th scope="col">
+                            <div>{con.id}</div>
+                        </th>
+                        <th scope="col">
+                            <div>{con.Name}</div>
+                        </th>
+                        <th scope="col">
+                            <div>{con.Email}</div>
+                        </th>
+                    </tr>                       
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+    <lightning-card  variant="Narrow"  title="Iterator Demo" icon-name="standard:account">
+        <template iterator:cons2={contacts}>
+           <div  key={cons2.value.id}>
+            <div if:true={cons2.first} class="list-first"></div>
+             {cons2.value.Name}-{cons2.value.Email}
+            <div if:true={cons2.last} class="list-last"></div> 
+            
+        </div>
+        </template>
+    </lightning-card>
+    
+</template>
